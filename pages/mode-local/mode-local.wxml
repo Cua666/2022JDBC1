@@ -1,0 +1,61 @@
+<image src="/images/5.jpg" mode="scaleToFill" class="backgroundimg"></image>
+
+<view>
+  <modal  wx:if="{{currDiceNum1>=9||currDiceNum2>=9}}" hidden="{{!modalofScoreHidden}}"  bindconfirm="ScoreConfirm" bindcancel="ScoreCandel"  >
+    <button bindtap="getScore" >
+      <view class="getscorefont" wx:if="{{!showscore}}">
+        <view>---结束!!!!---</view>
+        <view class="end">请点击此处以获取最终得分</view>
+      </view>
+    </button>
+    <text class="final">
+      <image wx:if="{{showscore}}" src="/images/champ.png"></image>
+      <text wx:if="{{showscore}}">{{score1>score2?"黑方":"红方"}}获胜!!\n</text>
+      <text wx:if="{{showscore}}">最终比分-->黑方{{score1}}:红方{{score2}}</text>
+    </text>
+  </modal>
+</view>
+
+<text class="Msg">
+  <text class="P">Player1</text>
+  <!-- <text class="score">
+    <text>Score:</text> 
+    <text>?</text>
+  </text> -->
+  <text class="action" wx:if="{{count%2==1&&count>0}}">轮到你行动了</text>
+  <text wx:if="{{count%2==1&&count>0}}" class="getNum">你获得了点数:{{Num}}</text>
+</text>
+
+<view class="player1cell">
+  <view wx:for="{{cell1}}"  wx:key="index" class="cell" bindtap="TapToPutDice1" data-index="{{index}}">
+    <image wx:if="{{item.type>0}}" src="{{item.img}}" class="celldice">
+    </image>
+  </view> 
+</view>
+<button class="zhitou1" bindtap="buttonTapDice">掷骰</button>
+  <modal  hidden="{{modalHidden}}"  bindconfirm="modalConfirm" bindcancel="modalCandel" >
+    <view class="diceimg">
+      <image  wx:if="{{Num==1}}"  src="{{imgurl1}}" mode="scaleToFill"></image>
+      <image  wx:if="{{Num==2}}"  src="{{imgurl2}}" mode="scaleToFill"></image>
+      <image  wx:if="{{Num==3}}"  src="{{imgurl3}}" mode="scaleToFill"></image>
+      <image  wx:if="{{Num==4}}"  src="{{imgurl4}}" mode="scaleToFill"></image>
+      <image  wx:if="{{Num==5}}"  src="{{imgurl5}}" mode="scaleToFill"></image>
+      <image  wx:if="{{Num==6}}"  src="{{imgurl6}}" mode="scaleToFill"></image>
+    </view> 
+  </modal>
+<text class="Msg2">
+  <text class="P">Player2</text>
+  <!-- <text class="score">
+    <text>Score:</text>
+    <text>?</text>
+  </text> -->
+  <text class="action" wx:if="{{count%2==0&&count>0}}">轮到你行动了</text>
+  <text wx:if="{{count%2==0&&count>0}}" class="getNum">你获得了点数:{{Num}}</text>
+</text>
+<view class="player2cell">
+  <view wx:for="{{cell2}}"  wx:key="index" class="cell" bindtap="TapToPutDice2" data-index="{{index}}">
+    <image wx:if="{{item.type>0}}" src="{{item.img}}" class="celldice">
+    </image>
+  </view> 
+</view>
+

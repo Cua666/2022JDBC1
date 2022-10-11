@@ -1,0 +1,11 @@
+.avatar{
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+}
+.nickname{
+  margin-top:30rpx;
+}
+.wrap{
+  text-align: center;
+}

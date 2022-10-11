@@ -1,0 +1,7 @@
+<!--pages/modes/modes.wxml-->
+<view>
+  <image src="/images/5.jpg" mode="scaleToFill"></image>
+  <button type="primary" id = "local" bindtap="localtap" plain>本地对战</button>
+  <button type="primary" id = "bot" bindtap="bottap" plain>人机对战</button>
+  <button type="primary" id = "quit" bindtap="quittap" plain>返回</button>
+</view>

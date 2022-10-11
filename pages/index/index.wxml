@@ -1,0 +1,9 @@
+<!--index.wxml-->
+<view>
+  <button type = "primary"  bindtap="btnTapHandler" id = "btn" hover-class="hover-class-1">开始游戏</button>
+</view>
+<image src="/images/1.png" mode="scaleToFill"></image>
+
+
+
+

@@ -1,0 +1,42 @@
+/* pages/list/list.wxss */
+
+#btna{
+  height: 100rpx;
+  width: 350rpx ;
+  color: rgb(0, 0, 0);
+  text-align: center;
+  font-size: 40rpx ;
+  background-color: #11eb52  ;
+  top: 150px;
+
+  border: 2px;
+  background: linear-gradient(to bottom right, yellow, orange);
+  border-radius: 50px;
+  font-weight: bold;
+  text-align: center;
+  box-shadow: 3px 6px 9px #67c0f0,0px 1px 2px #bf2fcb;
+}
+#btnb{
+  height: 100rpx;
+  width: 350rpx ;
+  color: rgb(0, 0, 0);
+  text-align: center;
+  font-size: 40rpx ;
+  background-color: #11eb52  ;
+  top: 350px;
+
+  border: 2px;
+  background: linear-gradient(to bottom right, yellow, orange);
+  border-radius: 50px;
+  font-weight: bold;
+  text-align: center;
+  box-shadow: 3px 6px 9px #67c0f0,0px 1px 2px #bf2fcb;
+}
+image{
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  z-index: -1;
+  top:0
+}
+

@@ -1,0 +1,7 @@
+<!--pages/list/list.wxml-->
+
+<view class="button1">
+  <button type = "primary" plain id="btna" bindtap="btntaprule">游戏规则说明</button>
+  <button type = "primary" plain id="btnb" bindtap="btntapmode">游戏模式</button>
+</view>
+<image src="/images/1.png" mode="scaleToFill"></image>
