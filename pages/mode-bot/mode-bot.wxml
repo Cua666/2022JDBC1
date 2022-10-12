@@ -1,0 +1,75 @@
+<image src="/images/ai.jpg" mode="scaleToFill" class="backgroundimg"></image>
+
+<view>
+  <modal  wx:if="{{currDiceNum1>=9||currDiceNum2>=9}}" hidden="{{!modalofScoreHidden}}"  bindconfirm="ScoreConfirm" bindcancel="ScoreCandel"  >
+    <button bindtap="getScore" >
+      <view class="getscorefont" wx:if="{{!showscore}}">
+        <view>---结束!!!!---</view>
+        <view class="end">请点击此处以获取最终得分</view>
+      </view>
+    </button>
+    <view>
+    <image wx:if="{{showscore}}" src="/images/champ.png" class="champ"></image>
+    <text class="final">
+      <text wx:if="{{showscore}}">{{score1>score2?"AI":"你"}}获胜!!\n</text>
+      <text wx:if="{{showscore}}">\r最终比分\n\rAI={{score1}}:你={{score2}}</text>
+    </text>
+  </view>
+  </modal>
+</view>
+
+<text class="Msg">
+  <text class="P">Bot</text>
+  <!-- <text class="score">
+    <text>Score:</text> 
+    <text>?</text>
+  </text> -->
+  <!-- <text class="action" wx:if="{{count>0}}">轮到你行动了</text>
+  <text wx:if="{{count>0}}" class="getNum">你获得了点数:{{Num}}</text> -->
+</text>
+
+<view class="player1cell">
+  <view wx:for="{{cell1}}"  wx:key="index" class="cell" data-index="{{index}}">
+    <image wx:if="{{item.type>0}}" src="{{item.img}}" class="celldice">
+    </image>
+  </view> 
+</view>
+<button class="zhitou1" bindtap="buttonTapDice">掷骰</button>
+  <modal  hidden="{{modalHidden}}"  bindconfirm="modalConfirm" bindcancel="modalCandel" >
+    <view class="diceimg">
+      <image  wx:if="{{Num==1}}"  src="{{imgurl1}}" mode="scaleToFill"></image>
+      <image  wx:if="{{Num==2}}"  src="{{imgurl2}}" mode="scaleToFill"></image>
+      <image  wx:if="{{Num==3}}"  src="{{imgurl3}}" mode="scaleToFill"></image>
+      <image  wx:if="{{Num==4}}"  src="{{imgurl4}}" mode="scaleToFill"></image>
+      <image  wx:if="{{Num==5}}"  src="{{imgurl5}}" mode="scaleToFill"></image>
+      <image  wx:if="{{Num==6}}"  src="{{imgurl6}}" mode="scaleToFill"></image>
+    </view> 
+  </modal>
+  <modal  hidden="{{modalHidden2}}"  bindconfirm="modalConfirm2" bindcancel="modalCandel2" >
+  <text class="botdice" >Bot得到点数{{BotNum}}</text>
+  <view class="diceimg" wx:if="{{botShowDice}}">
+      <image  wx:if="{{BotNum==1}}"  src="{{imgurl1}}" mode="scaleToFill"></image>
+      <image  wx:if="{{BotNum==2}}"  src="{{imgurl2}}" mode="scaleToFill"></image>
+      <image  wx:if="{{BotNum==3}}"  src="{{imgurl3}}" mode="scaleToFill"></image>
+      <image  wx:if="{{BotNum==4}}"  src="{{imgurl4}}" mode="scaleToFill"></image>
+      <image  wx:if="{{BotNum==5}}"  src="{{imgurl5}}" mode="scaleToFill"></image>
+      <image  wx:if="{{BotNum==6}}"  src="{{imgurl6}}" mode="scaleToFill"></image>
+    </view> 
+  </modal>
+<text class="Msg2">
+  <text class="P">You</text>
+  <!-- <text class="score">
+    <text>Score:</text>
+    <text>?</text>
+  </text> -->
+  <!-- <text class="action" >Action</text> -->
+  <text wx:if="{{count%2==0}}" class="getNum">请掷骰</text>
+  <text wx:if="{{count%2==1}}" class="placeNum">你获得了点数:{{Num}}--请放置</text>
+</text>
+<view class="player2cell">
+  <view wx:for="{{cell2}}"  wx:key="index" class="cell" bindtap="TapToPutDice2" data-index="{{index}}">
+    <image wx:if="{{item.type>0}}" src="{{item.img}}" class="celldice">
+    </image>
+  </view> 
+</view>
+

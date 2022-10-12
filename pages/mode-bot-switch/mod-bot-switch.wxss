@@ -1,0 +1,51 @@
+.ezbot{
+  height: 100rpx;
+  width: 300rpx !important;
+  color: rgb(0, 0, 0);
+  text-align: center;
+  font-size: 40rpx ;
+  background-color: #11eb52  ;
+  top: 100px;
+  border: 2px;
+  background: linear-gradient(to bottom right, gray, white);
+  border-radius: 50px;
+  font-weight: bold;
+  text-align: center;
+  box-shadow: 0px 2px 4px #67c0f0,0px 1px 2px #bf2fcb;
+}
+.dfbot{
+  height: 100rpx;
+  width: 300rpx !important;
+  color: rgb(0, 0, 0);
+  text-align: center;
+  font-size: 40rpx ;
+  background-color: #11eb52  ;
+  top: 150px;
+  border: 2px;
+  background: linear-gradient(to bottom right, gray, white);
+  border-radius: 50px;
+  font-weight: bold;
+  text-align: center;
+  box-shadow: 0px 2px 4px #67c0f0,0px 1px 2px #bf2fcb;
+}
+.qt{
+  height: 100rpx;
+  width: 300rpx !important;
+  color: rgb(0, 0, 0);
+  text-align: center;
+  font-size: 40rpx ;
+  background-color: #11eb52  ;
+  top: 200px;
+  border: 2px;
+  background: linear-gradient(to bottom right, gray, white);
+  border-radius: 50px;
+  font-weight: bold;
+  text-align: center;
+  box-shadow: 0px 2px 4px #67c0f0,0px 1px 2px #bf2fcb;
+}
+.background{
+  top:0px;
+  position: fixed;
+  height: 100%;
+  width: 100%;
+}

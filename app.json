@@ -5,10 +5,11 @@
     "pages/rules/rules",
     "pages/modes/modes",
     "pages/mode-local/mode-local",
-
+    "pages/mode-bot/mode-bot",
     "pages/logs/logs",
-    "pages/login/login"
-
+    "pages/login/login",
+    "pages/mode-bot-difficult/mod-bot-difficult",
+    "pages/mode-bot-switch/mod-bot-switch"
   ],
   "window": {
     "backgroundTextStyle": "light",

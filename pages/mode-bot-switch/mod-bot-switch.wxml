@@ -1,0 +1,6 @@
+<view>
+  <image class="background" src='/images/aibg.jpg' mode="heightFix" ></image>
+</view>
+<button class="ezbot" bindtap="easybot">简单人机</button>
+<button class="dfbot" bindtap="difbot">困难人机</button>
+<button class="qt" bindtap="quit">返回</button>

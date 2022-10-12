@@ -1,0 +1,120 @@
+.backgroundimg{
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  z-index: -1;
+  top:0
+}
+.player1cell{
+  width: 216px;
+  height: 216px;
+   margin-left: 80px;
+   margin-top: 0px; 
+   border-top:2px solid #ddd;
+   border-right: 2px solid #ddd;
+  }
+.cell{
+  border-left: 2px solid #ddd;
+  width: 70px;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color:red;
+  font-size:100rpx;
+  float: left;
+  border-bottom: 2px solid #ddd;
+}
+.player2cell{
+  width: 216px;
+  height: 216px; 
+  margin-left: 80px;
+  margin-top: 10px; 
+  border-top:2px solid #ddd;
+  border-right: 2px solid #ddd;
+}
+.zhitou1{
+  height: 60px !important;
+  width: 60px !important;
+  margin-top: 20px;
+  font-size: 16px;
+  background: linear-gradient(to bottom right, aqua, green);
+  background-color: rgb(29, 224, 29);
+  border-radius:21px;
+  box-shadow: 0px 2px 4px #67c0f0,0px 1px 2px #bf2fcb;
+}
+.champ{
+  width: 30px;
+  height: 30px;
+  margin-top:0px !important;
+  margin-left: 100px;
+}
+.celldice{
+  height: 70px;
+  width: 70px;
+}
+.Msg{
+  font-size: 14px;
+  font-weight: bold;
+  font-family:fantasy;
+  color: black;
+}
+.score{
+  margin-left: 50px !important;
+}
+.Msg2{
+  font-size: 14px;
+  font-weight: bold;
+  font-family:fantasy;
+  color: red;
+}
+.action{
+  background-color: rgb(208, 230, 10);
+  font-size: 15px;
+  font-weight: bold;
+  font-family:cursive;
+  color: rgb(0, 0, 0);
+  margin-left: 60px;
+}
+
+.placeNum{
+  font-family: cursive;
+  font-size: 20px;
+  margin-left:50px;
+  background-color: yellow;
+}
+.getNum{
+  font-family: cursive;
+  font-size: 20px;
+  margin-left:119px;
+  background-color: yellow;
+}
+.end{
+  background-color: yellow;
+  color:red;
+  font-size: 20px;
+}
+.P{
+  font-size:25px;
+  background-color: white;
+}
+.final{
+  font-size: 20px;
+  font-weight: bold;
+  font-family: fantasy;
+  color:red;
+  display:flex !important;
+  align-items:center !important;
+  justify-content:center !important;
+  flex-direction: column !important;
+}
+.botdice{
+  font-size: 20px;
+  font-weight: bold;
+  font-family: fantasy;
+  color:red;
+  display:flex !important;
+  align-items:center !important;
+  justify-content:center !important;
+  flex-direction: column !important;
+}
