@@ -200,7 +200,7 @@ TapToPutDice2:function(e){
     this.setData({
       modalofScoreHidden: false
     })
-    wx.navigateTo({
+    wx.redirectTo({
       url: '/pages/modes/modes',
     })
   },

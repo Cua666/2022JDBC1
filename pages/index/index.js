@@ -13,7 +13,7 @@ Page({
   },
   //定义按钮的事件处理函数
   btnTapHandler(){
-    wx.navigateTo({
+    wx.redirectTo({
       url:'/pages/list/list',
     })
   },

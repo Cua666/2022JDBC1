@@ -8,12 +8,12 @@ Page({
 
   },
   localtap(){
-    wx.navigateTo({
+    wx.redirectTo({
       url:'/pages/mode-local/mode-local',
     })
   },
   bottap(){
-    wx.navigateTo({
+    wx.redirectTo({
       url:'/pages/mode-bot-switch/mod-bot-switch',
     })
   },
@@ -23,7 +23,7 @@ Page({
       })
   },
   quittap(){
-    wx.navigateTo({
+    wx.redirectTo({
       url:'/pages/list/list',
     })
   },

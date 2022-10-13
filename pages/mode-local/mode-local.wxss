@@ -33,6 +33,12 @@
   border-top:2px solid #ddd;
   border-right: 2px solid #ddd;
 }
+.champ{
+  width: 30px;
+  height: 30px;
+  margin-top:0px !important;
+  margin-left: 100px;
+}
 .zhitou1{
   height: 60px !important;
   width: 60px !important;

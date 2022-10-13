@@ -8,12 +8,12 @@ Page({
 
   },
   btntaprule(){
-    wx.navigateTo({
+    wx.redirectTo({
       url:'/pages/rules/rules',
     })
   },
   btntapmode(){
-    wx.navigateTo({
+    wx.redirectTo({
       url:'/pages/modes/modes',
     })
   },

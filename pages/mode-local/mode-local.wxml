@@ -8,6 +8,7 @@
         <view class="end">请点击此处以获取最终得分</view>
       </view>
     </button>
+    <image wx:if="{{showscore}}" src="/images/champ.png" class="champ"></image>
     <text class="final">
       <image wx:if="{{showscore}}" src="/images/champ.png"></image>
       <text wx:if="{{showscore}}">{{score1>score2?"黑方":"红方"}}获胜!!\n</text>

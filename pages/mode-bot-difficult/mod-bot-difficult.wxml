@@ -8,11 +8,13 @@
         <view class="end">请点击此处以获取最终得分</view>
       </view>
     </button>
+    <view>
+    <image wx:if="{{showscore}}" src="/images/champ.png" class="champ"></image>
     <text class="final">
-      <image wx:if="{{showscore}}" src="/images/champ.png"></image>
       <text wx:if="{{showscore}}">{{score1>score2?"AI":"你"}}获胜!!\n</text>
-      <text wx:if="{{showscore}}">最终比分-->AI={{score1}}:你={{score2}}</text>
+      <text wx:if="{{showscore}}">\r最终比分\n\rAI={{score1}}:你={{score2}}</text>
     </text>
+  </view>
   </modal>
 </view>
 

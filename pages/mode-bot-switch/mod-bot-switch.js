@@ -6,17 +6,17 @@ Page({
 
   },
 easybot:function() {
-  wx.navigateTo({
+  wx.redirectTo({
     url: '/pages/mode-bot/mode-bot',
   })
 },
 difbot:function() {
-  wx.navigateTo({
+  wx.redirectTo({
     url: '/pages/mode-bot-difficult/mod-bot-difficult',
   })
 },
 quit:function() {
-  wx.navigateTo({
+  wx.redirectTo({
     url: '/pages/modes/modes',
   })
 }
