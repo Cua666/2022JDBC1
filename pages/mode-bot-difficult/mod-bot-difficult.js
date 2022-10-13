@@ -2,6 +2,7 @@ Page({
   data: {
     modalHidden: true,
     modalHidden2:true,
+    modalHidden3:true,
     modalofScoreHidden:true,
     imgurl1: "https://biaoqingba.cn/wp-content/uploads/2018/11/d97281d035ad9a5.gif",
     imgurl2: "https://biaoqingba.cn/wp-content/uploads/2018/11/5e2f9d2eed22d44.gif" ,
@@ -12,7 +13,9 @@ Page({
     tmp1:0,
     tmp2:0,
     score1:0,
-    score2:0
+    score2:0,
+    tgcolor:'grey'
+
   },
   /* 投骰子获取点数 */
   buttonTapDice: function() {     
@@ -27,6 +30,10 @@ Page({
         flag:this.data.flag + 1,
         canTapDice:false
       })
+      setTimeout(()=>
+      {
+        this.modalConfirm()
+      }, 2000)
     }
     else{
       return
@@ -95,7 +102,7 @@ TapToPutDice2:function(e){
     setTimeout(()=>
       {
         this.botaction()
-      }, 20)
+      }, 100)
   }
   else return
   
@@ -108,8 +115,140 @@ TapToPutDice2:function(e){
 
 
 },
- /* 人机行为 */
- botaction:function(){
+switchtuoguan:function() {
+  this.setData({
+    istuoguan:!this.data.istuoguan
+  })
+  if(this.data.istuoguan){
+    this.setData({
+      tgcolor:'red',
+      canTapDice:false
+    })
+  }
+  else{
+    this.setData({
+      tgcolor:'grey',
+      canTapDice:true
+    })
+  }
+  console.log("tuoguan="+this.data.istuoguan)
+  this.tuoguan()
+},
+/* 托管行为 */
+tuoguan:function(){
+  if(this.data.istuoguan){
+    var DiceNum=Math.floor(Math.random()*6+1)
+  this.setData({
+    tgShowDice:true,
+    BotNum:DiceNum,
+    modalHidden3: false
+  })
+  setTimeout(()=>
+  {
+    this.modalConfirm3()
+  }, 2000)
+  setTimeout(()=>
+  {
+    this.nextsteptg()
+  }, 2300)
+  }
+  else return
+}, 
+nextsteptg:function(){
+  var ownBoard = this.data.cell2
+  var otherBoard = this.data.cell1
+  var figure = this.data.BotNum
+  var ans=0
+  var final_diff=-100
+  for(var i=0;i<3;++i){
+    
+    for(var j=0;j<3;++j){
+      if(ownBoard[3*i+j].type==0){
+        let other = 0
+        let own = 0
+        let blank = 0
+        for(var k=0; k<3 ;++k){
+          if(ownBoard[3*i+k].type==figure){
+            ++own
+           
+          }
+          if(ownBoard[3*i+k].type==0){
+            ++blank
+            
+          }
+          if(otherBoard[3*i+k].type==figure){
+            ++other
+            
+          }
+        }
+        var diff = ((own + blank)*(own+blank)-own*own)+ other * other;
+        
+        if (diff >final_diff) {
+          ans = 3 * i + j ;
+          final_diff = diff;
+         
+        }
+        
+        break;
+      }
+      
+    }
+  } 
+ 
+
+ 
+  ownBoard[ans].type=figure
+
+  this.data.currDiceNum2++
+  if(this.data.BotNum===1){
+    ownBoard[ans].img = "/images/dice1.png"
+  }
+  if(this.data.BotNum===2){
+    ownBoard[ans].img = "/images/dice2.png"
+  }
+  if(this.data.BotNum===3){
+    ownBoard[ans].img  = "/images/dice3.png"
+  }
+  if(this.data.BotNum===4){
+    ownBoard[ans].img  = "/images/dice4.png"
+  }
+  if(this.data.BotNum===5){
+    ownBoard[ans].img  = "/images/dice5.png"
+  }
+  if(this.data.BotNum===6){
+    ownBoard[ans].img  = "/images/dice6.png"
+  }
+  var f= Math.floor(ans/3)
+  for(var i = 0 ;i < 9 ;i++){
+  if(Math.floor(i/3)==f){
+    if(otherBoard[i].type==ownBoard[ans].type){
+      this.data.currDiceNum1--
+      otherBoard[i].type=0
+      otherBoard[i].img=[]
+    }
+  }
+} 
+  
+  this.setData({
+    cell1:otherBoard,
+    cell2:ownBoard,
+    currDiceNum2:this.data.currDiceNum2,
+
+  })
+
+  if(this.data.currDiceNum2<9){
+    setTimeout(()=>
+      {
+        this.botaction()
+      }, 1000)
+  }
+  else return
+
+  
+  
+},
+/* 人机行为 */
+botaction:function(){
   var DiceNum=Math.floor(Math.random()*6+1)
   this.setData({
     botShowDice:true,
@@ -119,9 +258,14 @@ TapToPutDice2:function(e){
   setTimeout(()=>
   {
     this.modalConfirm2()
+
+    
+  }, 2000)
+  setTimeout(()=>
+  {
     this.nextstep()
     
-  }, 1500)
+  }, 2300)
   
 },
 /* 人机下一步棋ai */
@@ -218,13 +362,25 @@ TapToPutDice2:function(e){
       cell1:ownBoard,
       cell2:otherBoard,
       currDiceNum1:this.data.currDiceNum1,
-      canTapDice:true
+      
     })
+    if(!this.data.istuoguan){
+      this.setData({
+        canTapDice:true
+      })
+    }
     /* console.log("currdicenum1="+this.data.currDiceNum1)
     for(var i = 0 ;i < 9 ;i++){
     console.log(cell1[i].type+"\n");
     }  */
-    
+    if(this.data.istuoguan&&this.data.currDiceNum1<9){
+      setTimeout(()=>
+    {
+      this.tuoguan()
+      
+    }, 1000)
+  }
+ 
     
   },
 /* 最终计算得分 */
@@ -268,6 +424,12 @@ TapToPutDice2:function(e){
       modalHidden2: true
     })
   },
+  modalCandel3: function() {
+    // do something
+    this.setData({
+      modalHidden3: true
+    })
+  },
   ScoreCandel: function() {
     // do something
     this.setData({
@@ -286,6 +448,12 @@ TapToPutDice2:function(e){
     // do something
     this.setData({
       modalHidden2: true
+    })
+  },
+  modalConfirm3: function() {
+    // do something
+    this.setData({
+      modalHidden3: true
     })
   },
   ScoreConfirm: function() {
@@ -318,7 +486,8 @@ TapToPutDice2:function(e){
       canTapDice:true,
       BotNum:0,
       botShowDice:false,
-      
+      tgShowDice:false,
+      istuoguan:false,
     })
   },
   

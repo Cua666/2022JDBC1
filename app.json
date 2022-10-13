@@ -7,7 +7,7 @@
     "pages/mode-local/mode-local",
     "pages/mode-bot/mode-bot",
     "pages/logs/logs",
-    "pages/login/login",
+
     "pages/mode-bot-difficult/mod-bot-difficult",
     "pages/mode-bot-switch/mod-bot-switch"
   ],
@@ -19,25 +19,6 @@
   },
   "style": "v2",
   "sitemapLocation": "sitemap.json",
-  "lazyCodeLoading": "requiredComponents",
-  "tabBar": {
-    "color": "#616161",
-    "selectedColor": "#2E312F",
-    "backgroundColor": "#ffffff",
-    "borderStyle": "black",
-    "list": [
-      {
-        "pagePath": "pages/index/index",
-        "text": "菜单",
-        "iconPath": "/images/sy.png",
-        "selectedIconPath": "/images/sy_tap.png"
-      },
-      {
-        "pagePath": "pages/login/login",
-        "text": "我",
-        "iconPath": "/images/me.png",
-        "selectedIconPath": "/images/me_tap.png"
-      }
-    ]
-  }
+  "lazyCodeLoading": "requiredComponents"
+  
 }

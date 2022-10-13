@@ -35,6 +35,7 @@
   </view> 
 </view>
 <button class="zhitou1" bindtap="buttonTapDice">掷骰</button>
+<button class="tg" bindtap="switchtuoguan" style="background-color: {{tgcolor}};">托管</button>
   <modal  hidden="{{modalHidden}}"  bindconfirm="modalConfirm" bindcancel="modalCandel" >
     <view class="diceimg">
       <image  wx:if="{{Num==1}}"  src="{{imgurl1}}" mode="scaleToFill"></image>
@@ -48,6 +49,17 @@
   <modal  hidden="{{modalHidden2}}"  bindconfirm="modalConfirm2" bindcancel="modalCandel2" >
   <text class="botdice" >Bot得到点数{{BotNum}}</text>
   <view class="diceimg" wx:if="{{botShowDice}}">
+      <image  wx:if="{{BotNum==1}}"  src="{{imgurl1}}" mode="scaleToFill"></image>
+      <image  wx:if="{{BotNum==2}}"  src="{{imgurl2}}" mode="scaleToFill"></image>
+      <image  wx:if="{{BotNum==3}}"  src="{{imgurl3}}" mode="scaleToFill"></image>
+      <image  wx:if="{{BotNum==4}}"  src="{{imgurl4}}" mode="scaleToFill"></image>
+      <image  wx:if="{{BotNum==5}}"  src="{{imgurl5}}" mode="scaleToFill"></image>
+      <image  wx:if="{{BotNum==6}}"  src="{{imgurl6}}" mode="scaleToFill"></image>
+    </view> 
+  </modal>
+  <modal  hidden="{{modalHidden3}}"  bindconfirm="modalConfirm3" bindcancel="modalCandel3" >
+  <text class="tgdice" >你得到点数{{BotNum}}</text>
+  <view class="diceimg" wx:if="{{tgShowDice}}">
       <image  wx:if="{{BotNum==1}}"  src="{{imgurl1}}" mode="scaleToFill"></image>
       <image  wx:if="{{BotNum==2}}"  src="{{imgurl2}}" mode="scaleToFill"></image>
       <image  wx:if="{{BotNum==3}}"  src="{{imgurl3}}" mode="scaleToFill"></image>
